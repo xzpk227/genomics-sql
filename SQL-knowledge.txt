@@ -1,0 +1,39 @@
+SQL: SQL stands for Structured Query Language. It's the language you use to talk to a database — to ask questions, store data, and update it.
+sqlite is a database, SQL Query-command
+Table contains the row/column information in the database, for example genes, variants
+Redshift is similar to SQLite, SQLite can only be ran locally, but Redshift can be ran on aws with more data in general and can be queried faster.
+
+SELECT; WHRER; FROM
+-- Q3. Which genes are on chromosome 17?
+SELECT gene_name, start_pos, end_pos
+FROM genes
+WHERE chromosome = 'chr17';
+
+How did I can use SQL on lab's server
+
+(1) We generate VCF contains millions of variants
+(2) Maybe we annotate It
+(3) To extract the information we want more efficent like Pathogenic, gene type, region, we transform it into SQL database tables.
+(4) And shared this created table/database in our lab, so every member can do the opperation according to their own requirments.
+
+
+In our lab, SQL databases can be useful for managing and querying large-scale genomic datasets more efficiently.
+For example:
+We generate VCF files containing millions of variants from WGS analysis.
+The variants are further annotated using tools such as ANNOVAR or ClinVar annotations, adding information such as gene names, pathogenicity, population frequency, functional regions, and clinical significance.
+Instead of repeatedly parsing very large VCF or annotation text files, we can import the structured variant and metadata tables into a SQL database system. This allows much more efficient querying and filtering of information such as:
+pathogenic or likely pathogenic variants
+variants in specific genes or genomic regions
+coding vs non-coding variants
+population frequency thresholds
+sample-specific or cohort-level variant summaries
+The database can then be shared within the lab or research group so that multiple users can perform customized analyses and queries according to their own research questions without reprocessing the raw files each time.
+
+
+Why didn't use Redshift
+(1) I understand Redshift is an more efficent system for Query large amounts of data. 
+Our lab's hpc server can meet the normal requirments for variants filtering, we only have less than 2000 samples.
+(2) But I have some other experience on AWS like S3/EBS mount and EC2, and SQL's logic i think is similar, so you have the requirments for working on Redshift, I can learn it.
+
+I understand that Amazon Redshift is designed for large-scale data warehousing and efficient querying of very large structured datasets. In my previous lab projects, we did not need Redshift because our HPC server and local storage were sufficient for variant filtering and cohort-level analyses across fewer than 2,000 samples.
+However, I do have experience working with AWS services such as S3, EBS-mounted storage, and EC2, as well as experience organizing and querying structured genomic data. Since the underlying logic of Redshift is SQL-based data querying and scalable data management, I believe I can quickly adapt to Redshift if it is required for this role.
