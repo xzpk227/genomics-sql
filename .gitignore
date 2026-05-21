@@ -1,6 +1,9 @@
 # Large raw data files — too big for GitHub
 answeralspractice/answerals_sql_practice_sql.txt
 
+# Personal notes
+answer-details.txt
+
 # SQLite database files — generated, not source code
 *.db
 
@@ -10,6 +13,9 @@ answeralspractice/answerals_sql_practice_sql.txt
 # Python cache
 __pycache__/
 *.pyc
+
+# Generated results — recreate by running run_filters.py
+answeralspractice/results/
 
 # Temporary files
 *.tmp
