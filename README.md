@@ -1,4 +1,4 @@
-# Genomics SQL Practice
+# Genomics SQL Demo
 
 A hands-on SQL learning project using real genomics data structures — variants, genes, samples, and ANNOVAR annotations.
 
